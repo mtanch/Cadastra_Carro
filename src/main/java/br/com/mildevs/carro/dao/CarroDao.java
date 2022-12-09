@@ -99,6 +99,7 @@ public class CarroDao {
 		return false;
 	}
 	
+	@SuppressWarnings("unchecked")
 	public List<Carro> consultarCarroPorMarca(String marca) {
 		Query myQuery = this.manager.createQuery("SELECT c FROM Carro as c WHERE c.marca = :marca");
 		myQuery.setParameter("marca", marca);
@@ -106,7 +107,7 @@ public class CarroDao {
 		return myQuery.getResultList();
 	}
 	
-	
+	@SuppressWarnings("unchecked")
 	public List<Carro> listarTodosOsCarros() {
 		Query myQuery = this.manager.createQuery("SELECT c FROM Carro as c");
 		
